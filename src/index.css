@@ -164,8 +164,12 @@ body {
 }
 
 .page-link {
-  color: aliceblue;
+  color: #c7fa6c;
+  font-weight: bold;
   text-decoration: none;
+  cursor: pointer;
+  background-color: #35c9dd;
+  border: none;
 }
 
 .page-link:link {
