@@ -10,10 +10,8 @@ import Pagination from './components/Pagination';
 function App() {
   
   const[location, setLocation] = useState({})
-  const[info, setInfo] = useState({})
-  const[isLoading, setIsLoading] = useState(false)
   const[currentPage, setCurrentPage] = useState(1)
-  const[residentsPerPage, setResidentsPerPage] = useState(10);
+  const[residentsPerPage] = useState(10);
 
     useEffect(() => {
       axios.get(`https://rickandmortyapi.com/api/location/${RandomLocation()}`)
@@ -41,7 +39,8 @@ function App() {
       <SearchBox setLocation={setLocation} />
       <LocationInfo location={location}/>
       <ResidentsList listResidents={currentLocation}/>
-      <Pagination residentsPerPage={residentsPerPage} 
+      <Pagination 
+      residentsPerPage={residentsPerPage} 
       totalResidents={location?.residents?.length}
       paginate={paginate}/>
     </div>
